@@ -1,16 +1,13 @@
-# flutter_templete
+# Flutter + riverpod App Templete
 
-A new Flutter project.
+## Changing Enviroment
 
-## Getting Started
+Use this command to switch between enviroment
 
-This project is a starting point for a Flutter application.
+```bash
+sh setenv.sh -e ENV_TYPE
+```
 
-A few resources to get you started if this is your first Flutter project:
+`ENV_TYPE` is can be `staging` or `production`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> Note : switching enviroment will auto-generate Firebase files : json for Android , plist for iOS !!
