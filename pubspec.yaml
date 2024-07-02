@@ -1,0 +1,91 @@
+name: flutter_templete
+description: "A new Flutter project that uses riverpod as state management."
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: "3.19.6"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # state
+  hooks_riverpod: ^2.5.1
+  flutter_hooks: ^0.20.5
+
+  # look and feel
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  top_snackbar_flutter: ^3.1.0
+  flutter_country_code: ^1.2.2
+
+  # network and serilization
+  http: ^1.2.1
+  freezed_annotation: ^2.4.2
+  json_annotation: ^4.9.0
+
+  # utils and services
+  shared_preferences: ^2.2.3
+  url_launcher: ^6.3.0
+  path_provider: ^2.1.3
+  path: ^1.9.0
+  intl: 0.18.1 # TODO : flutter upgrade
+
+  # firebase
+  firebase_core: ^2.32.0
+  firebase_analytics: ^10.10.7
+  firebase_crashlytics: ^3.5.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  build_runner: 2.4.9 # TODO : flutter upgrade
+  freezed: 2.5.2 # TODO : flutter upgrade
+  json_serializable: ^6.8.0
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  android_12:
+    color: "#FFFFFFB"
+flutter_launcher_icons:
+  ios: true
+  android: true
+  remove_alpha_ios: true
+  image_path: "assets/logo/fgi.png"
+  image_path_ios: "assets/logo/foreground_logo.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/logo/fgi.png"
+
+flutter:
+  uses-material-design: true
+  # run this to generate a Freezed Models : flutter pub run build_runner build --delete-conflicting-outputs
+  generate: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/logo/
+    - assets/icons/
+    - assets/dumbs/
+
+  # To add custom fonts to your application, add a fonts section here, // TODO : add custom fonts
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
