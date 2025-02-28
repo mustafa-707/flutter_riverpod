@@ -78,8 +78,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
                       begin: FractionalOffset.topCenter,
                       end: FractionalOffset.bottomCenter,
                       colors: [
-                        const Color(0xFF000210).withOpacity(.05),
-                        const Color(0xFF000210).withOpacity(.9),
+                        const Color(0xFF000210).withValues(alpha: .05),
+                        const Color(0xFF000210).withValues(alpha: .9),
                       ],
                       stops: const [0.0, 2.0],
                     ),

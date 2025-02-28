@@ -38,14 +38,17 @@ class BackendAPIService {
     File? file,
   }) async {
     // create url
-    final uri = Uri.parse("$baseUrl/$relativeUrl")
-        .replace(queryParameters: queryParams);
+    final uri = Uri.parse(
+      "$baseUrl/$relativeUrl",
+    ).replace(queryParameters: queryParams);
 
     // create headers
     final requestHeaders = <String, String>{};
     if (extraHeaders != null) requestHeaders.addAll(extraHeaders);
     requestHeaders.putIfAbsent(
-        "Accept-language", () => ref.read(currentLocaleProvider));
+      "Accept-language",
+      () => ref.read(currentLocaleProvider),
+    );
     if (jsonBody != null) {
       requestHeaders.putIfAbsent("Content-type", () => "application/json");
     }
@@ -91,7 +94,9 @@ class BackendAPIService {
         }
 
         throw ApplicationException(
-            code: response.statusCode.toString(), text: errorMessage);
+          code: response.statusCode.toString(),
+          text: errorMessage,
+        );
       }
 
       try {
@@ -101,9 +106,7 @@ class BackendAPIService {
         log(
           "Parse Error: [${response.statusCode} ${response.reasonPhrase}] [$e]",
         );
-        throw UnknownException(
-          message: "Parse Error: $e ${body.toString()}",
-        );
+        throw UnknownException(message: "Parse Error: $e ${body.toString()}");
       }
     } on SocketException {
       throw const ConnectionErrorException();
@@ -113,9 +116,4 @@ class BackendAPIService {
   }
 }
 
-enum RequestMethod {
-  get,
-  post,
-  put,
-  delete,
-}
+enum RequestMethod { get, post, put, delete }

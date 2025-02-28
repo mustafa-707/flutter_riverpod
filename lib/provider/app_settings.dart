@@ -7,8 +7,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final appReadyProvider = StateProvider<bool>((ref) => false);
 
-final appSettingsProvider =
-    StateNotifierProvider<AppSettingsController, AppSettings>((ref) {
+final appSettingsProvider = StateNotifierProvider<
+  AppSettingsController,
+  AppSettings
+>((ref) {
   final sharedPrefs = ref.watch(sharedPrefsProvider);
   assert(
     sharedPrefs != null,
@@ -21,9 +23,8 @@ final appSettingsProvider =
 class AppSettingsController extends StateNotifier<AppSettings> {
   final SharedPreferences sharedPreferences;
 
-  AppSettingsController(
-    this.sharedPreferences,
-  ) : super(_settingsFromPrefs(sharedPreferences));
+  AppSettingsController(this.sharedPreferences)
+    : super(_settingsFromPrefs(sharedPreferences));
 
   static AppSettings _settingsFromPrefs(SharedPreferences prefs) {
     final locale = prefs.getString(PrefKeys.appLocale);

@@ -7,10 +7,7 @@ const String placeholderImgPath = 'flags/placeholder.png';
 class FlagIcon extends StatelessWidget {
   final String? countryCode;
 
-  const FlagIcon({
-    super.key,
-    this.countryCode,
-  });
+  const FlagIcon({super.key, this.countryCode});
 
   @override
   Widget build(BuildContext context) {

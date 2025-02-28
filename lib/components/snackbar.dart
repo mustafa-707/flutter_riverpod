@@ -6,19 +6,11 @@ import 'package:flutter_templete/utils/lang/locale.export.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 void showSuccessMsg(String text) {
-  _showSnackbar(
-    text,
-    color: const Color(0xFF43C489),
-    textColor: Colors.white,
-  );
+  _showSnackbar(text, color: const Color(0xFF43C489), textColor: Colors.white);
 }
 
 void showErrorMsg(String text) {
-  _showSnackbar(
-    text,
-    color: const Color(0xFFEF7373),
-    textColor: Colors.white,
-  );
+  _showSnackbar(text, color: const Color(0xFFEF7373), textColor: Colors.white);
 }
 
 void handleException(Object e) {
@@ -31,7 +23,8 @@ void handleException(Object e) {
   if (e is ApplicationException) {
     if (e.code == 'unknown') {
       showErrorMsg(
-          translate?.unknownErrorOccurred ?? 'An unknown error occurred');
+        translate?.unknownErrorOccurred ?? 'An unknown error occurred',
+      );
     } else {
       showErrorMsg(e.text);
     }
@@ -40,7 +33,8 @@ void handleException(Object e) {
       showErrorMsg(translate?.unauthenticated ?? 'Unauthenticated');
     } else {
       showErrorMsg(
-          translate?.unknownErrorOccurred ?? 'An unknown error occurred');
+        translate?.unknownErrorOccurred ?? 'An unknown error occurred',
+      );
     }
   }
 }
@@ -53,11 +47,7 @@ void _showSnackbar(
   final navigator = getRootNavigator();
   showTopSnackBar(
     navigator.overlay!,
-    AppSnackBar(
-      color: color,
-      text: text,
-      textColor: textColor,
-    ),
+    AppSnackBar(color: color, text: text, textColor: textColor),
     curve: Curves.easeInOut,
     reverseCurve: Curves.easeInOut,
     animationDuration: const Duration(milliseconds: 350),
@@ -93,10 +83,9 @@ class AppSnackBar extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: textColor,
-                  fontSize: 13,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(color: textColor, fontSize: 13),
           ),
         ),
       ),

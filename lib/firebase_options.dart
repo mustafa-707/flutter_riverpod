@@ -46,10 +46,6 @@ class DefaultFirebaseOptions {
               'DefaultFirebaseOptions are not supported for this platform.',
             );
         }
-      default:
-        throw UnsupportedError(
-          'App Environment not set in .env.',
-        );
     }
   }
 

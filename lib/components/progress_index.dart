@@ -15,12 +15,8 @@ class AppProgressIndicator extends StatelessWidget {
             width: 61,
             decoration: BoxDecoration(
               color: Colors.transparent,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(100),
-              ),
-              border: Border.all(
-                color: theme.colorScheme.secondary,
-              ),
+              borderRadius: const BorderRadius.all(Radius.circular(100)),
+              border: Border.all(color: theme.colorScheme.secondary),
             ),
           ),
         ),

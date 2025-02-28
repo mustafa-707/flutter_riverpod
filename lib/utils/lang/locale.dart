@@ -10,25 +10,13 @@ class Language {
   final String name;
   final Widget icon;
 
-  const Language({
-    required this.code,
-    required this.name,
-    required this.icon,
-  });
+  const Language({required this.code, required this.name, required this.icon});
 }
 
 class LocaleService {
   static const List<Language> supportedLocales = [
-    Language(
-      code: 'ar',
-      name: 'العربية',
-      icon: FlagIcon(countryCode: 'SA'),
-    ),
-    Language(
-      code: 'en',
-      name: 'English',
-      icon: FlagIcon(countryCode: 'GB'),
-    ),
+    Language(code: 'ar', name: 'العربية', icon: FlagIcon(countryCode: 'SA')),
+    Language(code: 'en', name: 'English', icon: FlagIcon(countryCode: 'GB')),
   ];
 
   /// default language code

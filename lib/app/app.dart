@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_templete/app/app.router.dart';
 import 'package:flutter_templete/components/behaviors/scroll.dart';
 import 'package:flutter_templete/provider/app_settings.dart';
-import 'package:flutter_templete/screens/splash_screen.dart';
 import 'package:flutter_templete/utils/global_navigator.dart';
 import 'package:flutter_templete/utils/lang/locale.dart';
 import 'package:flutter_templete/utils/lang/locale.export.dart';
@@ -18,29 +17,26 @@ class App extends ConsumerWidget {
     final theme = ref.watch(currentThemeProvider);
 
     return MaterialApp(
-      title: 'SaqerSpace:Capture',
+      title: 'flutter_templete',
       navigatorKey: rootNavigator,
       themeMode: ThemeMode.values.firstWhere(
         (element) => element.name == theme,
       ),
-      theme: AppThemes.darkTheme,
-      darkTheme: AppThemes.darkTheme,
+      theme: AppTheme.dark,
+      darkTheme: AppTheme.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: [
         for (var supportedLocale in LocaleService.supportedLocales)
-          Locale(supportedLocale.code)
+          Locale(supportedLocale.code),
       ],
       locale: Locale(locale),
-      initialRoute: SplashScreen.routeName,
-      routes: appRoutes,
+      onGenerateRoute: onGenerateRoute,
       builder: (BuildContext context, Widget? child) {
         final MediaQueryData data = MediaQuery.of(context);
         return ScrollConfiguration(
           behavior: AppScrollBehavior(),
           child: MediaQuery(
-            data: data.copyWith(
-              textScaler: const TextScaler.linear(1.0),
-            ),
+            data: data.copyWith(textScaler: const TextScaler.linear(1.0)),
             child: child ?? const SizedBox(),
           ),
         );

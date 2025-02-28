@@ -14,13 +14,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 //
 
 Future<void> main() async {
-  await runZonedGuarded<Future<void>>(
-    () async {
-      await _guardedInitalization();
-      runApp(const ProviderScope(child: App()));
-    },
-    (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack),
-  );
+  await runZonedGuarded<Future<void>>(() async {
+    await _guardedInitalization();
+    runApp(const ProviderScope(child: App()));
+  }, (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack));
 }
 
 Future<void> _guardedInitalization() async {
@@ -28,9 +25,7 @@ Future<void> _guardedInitalization() async {
   // SystemChrome will not work, for example. This is a no-op if the binding
   // is already initialized.
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(
-    SystemUiMode.edgeToEdge,
-  );
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   if (!kIsWeb && (Platform.isIOS || Platform.isAndroid)) {
     try {
       if (Platform.isIOS) {
@@ -42,8 +37,9 @@ Future<void> _guardedInitalization() async {
       }
 
       FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-      FirebaseCrashlytics.instance
-          .setCrashlyticsCollectionEnabled(kDebugMode ? false : true);
+      FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(
+        kDebugMode ? false : true,
+      );
       Isolate.current.addErrorListener(
         RawReceivePort((pair) async {
           final List<dynamic> errorAndStacktrace = pair;

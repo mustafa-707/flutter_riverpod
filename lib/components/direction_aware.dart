@@ -4,10 +4,7 @@ import 'dart:math' as math;
 class DirectionAware extends StatelessWidget {
   final Widget child;
 
-  const DirectionAware({
-    super.key,
-    required this.child,
-  });
+  const DirectionAware({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

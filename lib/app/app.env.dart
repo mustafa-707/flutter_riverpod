@@ -1,7 +1,4 @@
-enum AppEnv {
-  staging,
-  production,
-}
+enum AppEnv { staging, production }
 
 class AppFromEnv {
   static const _selectedEnv = String.fromEnvironment('ENV');

@@ -9,9 +9,7 @@ class FieldValidator {
     final isValidEmail = RegExp(
       r"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$",
       caseSensitive: false,
-    ).hasMatch(
-      trimmedValue,
-    );
+    ).hasMatch(trimmedValue);
 
     if (trimmedValue.isEmpty) {
       return translate?.pleaseEnterEmail;

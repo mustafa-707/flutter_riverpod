@@ -4,10 +4,7 @@ import 'package:flutter_templete/utils/constants.dart';
 class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget searchField;
 
-  const SearchAppBar({
-    super.key,
-    required this.searchField,
-  });
+  const SearchAppBar({super.key, required this.searchField});
 
   @override
   Widget build(BuildContext context) {
