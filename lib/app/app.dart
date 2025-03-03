@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_templete/app/app.router.dart';
 import 'package:flutter_templete/components/behaviors/scroll.dart';
 import 'package:flutter_templete/provider/app_settings.dart';
+import 'package:flutter_templete/screens/splash_screen.dart';
 import 'package:flutter_templete/utils/global_navigator.dart';
 import 'package:flutter_templete/utils/lang/locale.dart';
 import 'package:flutter_templete/utils/lang/locale.export.dart';
@@ -30,6 +31,7 @@ class App extends ConsumerWidget {
           Locale(supportedLocale.code),
       ],
       locale: Locale(locale),
+      initialRoute: SplashScreen.routeName,
       onGenerateRoute: onGenerateRoute,
       builder: (BuildContext context, Widget? child) {
         final MediaQueryData data = MediaQuery.of(context);

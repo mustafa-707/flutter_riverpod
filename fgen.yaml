@@ -1,0 +1,6 @@
+watch: false
+preview: false
+
+output: lib/generated/assets.gen.dart
+
+name: Assets

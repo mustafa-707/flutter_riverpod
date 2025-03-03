@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_templete/generated/assets.gen.dart';
 import 'package:flutter_templete/provider/app_settings.dart';
 import 'package:flutter_templete/provider/shared_preferences.dart';
-import 'package:flutter_templete/utils/helpers/extensions.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,10 +28,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     //     (_) => false,
     //   );
     // } else {
-    Navigator.of(context).pushNamedAndRemoveUntil(
-      'login', //  LoginScreen.routeName,
-      (_) => false,
-    );
+    // Navigator.of(context).pushNamedAndRemoveUntil(
+    //   'login', //  LoginScreen.routeName,
+    //   (_) => false,
+    // );
     // }
   }
 
@@ -68,42 +68,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           //     ),
           //   ),
           // ),
-          Column(
-            children: [
-              SizedBox(height: context.height / 2),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: FractionalOffset.topCenter,
-                      end: FractionalOffset.bottomCenter,
-                      colors: [
-                        const Color(0xFF000210).withValues(alpha: .05),
-                        const Color(0xFF000210).withValues(alpha: .9),
-                      ],
-                      stops: const [0.0, 2.0],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const Positioned(
-            bottom: 60,
-            left: 0,
-            right: 0,
+          Positioned.fill(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 32.0),
-              child: Column(
-                children: [
-                  // Images.transparentLogo,
-                  // Text(
-                  //   translate.splashIntro,
-                  //   style: theme.textTheme.titleLarge?.copyWith(
-                  //     fontSize: 40,
-                  //   ),
-                  // ),
-                ],
+              child: Center(
+                child: Image.asset(
+                  Assets.ASSETS_IMAGES_LOGO_PNG,
+                ),
               ),
             ),
           ),

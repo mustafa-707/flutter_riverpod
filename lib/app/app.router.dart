@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_templete/screens/splash_screen.dart';
 
-Route<dynamic> onGenerateRoute(RouteSettings settings) {
+Route onGenerateRoute(RouteSettings settings) {
+  log('Route: ${settings.name}');
+
   switch (settings.name) {
     case SplashScreen.routeName:
       return MaterialPageRoute(
@@ -10,9 +14,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
     default:
       return MaterialPageRoute(
-        builder:
-            (context) =>
-                const Scaffold(body: Center(child: Text('Page not found'))),
+        builder: (context) => const Scaffold(
+          body: Center(
+            child: Text('Page not found'),
+          ),
+        ),
         settings: settings,
       );
   }

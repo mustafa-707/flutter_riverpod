@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_country_code/flutter_country_code.dart';
+import 'package:country_code_helper/country_code_helper.dart';
 
 // must too be updated into `flutter_country_code`
 const String placeholderImgPath = 'flags/placeholder.png';
@@ -17,7 +17,8 @@ class FlagIcon extends StatelessWidget {
         child: Image.asset(
           countryCode == null
               ? placeholderImgPath
-              : (getCountryByCountryCode(countryCode!).flag),
+              : CountryCode.getCountryByCountryCode(countryCode!)?.localFlag ??
+                  placeholderImgPath,
           fit: BoxFit.fill,
           height: 50,
           width: 50,

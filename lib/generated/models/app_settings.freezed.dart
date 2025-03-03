@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,136 +9,147 @@ part of '../../models/app_settings.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$AppSettings {
+  String get locale => throw _privateConstructorUsedError;
+  String get theme => throw _privateConstructorUsedError;
 
- String get locale; String get theme;
-/// Create a copy of AppSettings
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AppSettingsCopyWith<AppSettings> get copyWith => _$AppSettingsCopyWithImpl<AppSettings>(this as AppSettings, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppSettings&&(identical(other.locale, locale) || other.locale == locale)&&(identical(other.theme, theme) || other.theme == theme));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,locale,theme);
-
-@override
-String toString() {
-  return 'AppSettings(locale: $locale, theme: $theme)';
-}
-
-
+  @JsonKey(ignore: true)
+  $AppSettingsCopyWith<AppSettings> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AppSettingsCopyWith<$Res>  {
-  factory $AppSettingsCopyWith(AppSettings value, $Res Function(AppSettings) _then) = _$AppSettingsCopyWithImpl;
-@useResult
-$Res call({
- String locale, String theme
-});
-
-
-
-
+abstract class $AppSettingsCopyWith<$Res> {
+  factory $AppSettingsCopyWith(
+          AppSettings value, $Res Function(AppSettings) then) =
+      _$AppSettingsCopyWithImpl<$Res, AppSettings>;
+  @useResult
+  $Res call({String locale, String theme});
 }
+
 /// @nodoc
-class _$AppSettingsCopyWithImpl<$Res>
+class _$AppSettingsCopyWithImpl<$Res, $Val extends AppSettings>
     implements $AppSettingsCopyWith<$Res> {
-  _$AppSettingsCopyWithImpl(this._self, this._then);
+  _$AppSettingsCopyWithImpl(this._value, this._then);
 
-  final AppSettings _self;
-  final $Res Function(AppSettings) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of AppSettings
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? locale = null,Object? theme = null,}) {
-  return _then(_self.copyWith(
-locale: null == locale ? _self.locale : locale // ignore: cast_nullable_to_non_nullable
-as String,theme: null == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-}
-
-
-/// @nodoc
-
-
-class _AppSettings extends AppSettings {
-  const _AppSettings({this.locale = LocaleService.defaultLocale, this.theme = ThemeService.defaultTheme}): super._();
-  
-
-@override@JsonKey() final  String locale;
-@override@JsonKey() final  String theme;
-
-/// Create a copy of AppSettings
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AppSettingsCopyWith<_AppSettings> get copyWith => __$AppSettingsCopyWithImpl<_AppSettings>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppSettings&&(identical(other.locale, locale) || other.locale == locale)&&(identical(other.theme, theme) || other.theme == theme));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,locale,theme);
-
-@override
-String toString() {
-  return 'AppSettings(locale: $locale, theme: $theme)';
-}
-
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = null,
+    Object? theme = null,
+  }) {
+    return _then(_value.copyWith(
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract mixin class _$AppSettingsCopyWith<$Res> implements $AppSettingsCopyWith<$Res> {
-  factory _$AppSettingsCopyWith(_AppSettings value, $Res Function(_AppSettings) _then) = __$AppSettingsCopyWithImpl;
-@override @useResult
-$Res call({
- String locale, String theme
-});
-
-
-
-
+abstract class _$$AppSettingsImplCopyWith<$Res>
+    implements $AppSettingsCopyWith<$Res> {
+  factory _$$AppSettingsImplCopyWith(
+          _$AppSettingsImpl value, $Res Function(_$AppSettingsImpl) then) =
+      __$$AppSettingsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String locale, String theme});
 }
+
 /// @nodoc
-class __$AppSettingsCopyWithImpl<$Res>
-    implements _$AppSettingsCopyWith<$Res> {
-  __$AppSettingsCopyWithImpl(this._self, this._then);
+class __$$AppSettingsImplCopyWithImpl<$Res>
+    extends _$AppSettingsCopyWithImpl<$Res, _$AppSettingsImpl>
+    implements _$$AppSettingsImplCopyWith<$Res> {
+  __$$AppSettingsImplCopyWithImpl(
+      _$AppSettingsImpl _value, $Res Function(_$AppSettingsImpl) _then)
+      : super(_value, _then);
 
-  final _AppSettings _self;
-  final $Res Function(_AppSettings) _then;
-
-/// Create a copy of AppSettings
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? locale = null,Object? theme = null,}) {
-  return _then(_AppSettings(
-locale: null == locale ? _self.locale : locale // ignore: cast_nullable_to_non_nullable
-as String,theme: null == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = null,
+    Object? theme = null,
+  }) {
+    return _then(_$AppSettingsImpl(
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
+/// @nodoc
 
+class _$AppSettingsImpl extends _AppSettings {
+  const _$AppSettingsImpl(
+      {this.locale = LocaleService.defaultLocale,
+      this.theme = ThemeService.defaultTheme})
+      : super._();
+
+  @override
+  @JsonKey()
+  final String locale;
+  @override
+  @JsonKey()
+  final String theme;
+
+  @override
+  String toString() {
+    return 'AppSettings(locale: $locale, theme: $theme)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppSettingsImpl &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.theme, theme) || other.theme == theme));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale, theme);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppSettingsImplCopyWith<_$AppSettingsImpl> get copyWith =>
+      __$$AppSettingsImplCopyWithImpl<_$AppSettingsImpl>(this, _$identity);
 }
 
-// dart format on
+abstract class _AppSettings extends AppSettings {
+  const factory _AppSettings({final String locale, final String theme}) =
+      _$AppSettingsImpl;
+  const _AppSettings._() : super._();
+
+  @override
+  String get locale;
+  @override
+  String get theme;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppSettingsImplCopyWith<_$AppSettingsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

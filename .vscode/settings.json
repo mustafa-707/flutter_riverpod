@@ -1,5 +1,11 @@
 {
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/fluttercandies/flutter_asset_generator/master/fgen_schema.json": [
+      "fgen.yaml"
+    ]
+  },
   "dart.lineLength": 80,
+
   "[dart]": {
     "editor.rulers": [80],
     "editor.formatOnSave": true

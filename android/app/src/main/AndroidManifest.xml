@@ -1,15 +1,15 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-xmlns:tools="http://schemas.android.com/tools"
-package="com.example.flutter_templete">
-
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.flutter_templete">
     <uses-permission android:name="android.permission.INTERNET"/>
     <queries>
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
         <intent>
-          <action android:name="android.intent.action.VIEW" />
-          <data android:scheme="mailto" />
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="mailto" />
         </intent>
-      </queries>
+    </queries>
     <application
         android:label="flutter_templete"
         android:name="${applicationName}"
