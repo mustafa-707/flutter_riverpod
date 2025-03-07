@@ -1,53 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_templete/utils/global_navigator.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_templete/utils/helpers/extensions.dart';
+import 'package:flutter_templete/utils/theme/color_palette.dart';
 
 abstract final class AppTheme {
-  // The defined light theme.
-  static ThemeData light = FlexThemeData.light(
-    scheme: FlexScheme.shark,
-    subThemesData: const FlexSubThemesData(
-      interactionEffects: true,
-      tintedDisabledControls: true,
-      useM2StyleDividerInM3: true,
-      inputDecoratorIsFilled: true,
-      inputDecoratorBorderType: FlexInputBorderType.outline,
-      alignedDropdown: true,
-      navigationRailUseIndicator: true,
-      navigationRailLabelType: NavigationRailLabelType.all,
-    ),
-    visualDensity: FlexColorScheme.comfortablePlatformDensity,
-    cupertinoOverrideTheme: const CupertinoThemeData(applyThemeToAll: true),
+  static final light = FlexThemeData.light(
+    colors: ColorPalette.lightScheme,
+    scheme: FlexScheme.greenM3,
+    surface: ColorPalette.lightBackground,
   );
+
   // The defined dark theme.
-  static ThemeData dark = FlexThemeData.dark(
-    scheme: FlexScheme.shark,
-    subThemesData: const FlexSubThemesData(
-      interactionEffects: true,
-      tintedDisabledControls: true,
-      blendOnColors: true,
-      useM2StyleDividerInM3: true,
-      inputDecoratorIsFilled: true,
-      inputDecoratorBorderType: FlexInputBorderType.outline,
-      alignedDropdown: true,
-      navigationRailUseIndicator: true,
-      navigationRailLabelType: NavigationRailLabelType.all,
-    ),
-    visualDensity: FlexColorScheme.comfortablePlatformDensity,
-    cupertinoOverrideTheme: const CupertinoThemeData(applyThemeToAll: true),
+  static final dark = FlexThemeData.dark(
+    colors: ColorPalette.darkScheme,
+    scheme: FlexScheme.greenM3,
+    surface: ColorPalette.darkBackground,
   );
 }
 
 class ThemeService {
   static const defaultTheme = 'light';
+  static const secondaryTheme = 'dark';
 
-  static String getDefaultTheme() {
+  static List<String> get getSupportedThemes => [
+        defaultTheme,
+        secondaryTheme,
+      ];
+
+  static bool isSupportedTheme(String theme) {
+    return getSupportedThemes.map((t) => t).contains(theme);
+  }
+
+  static String getThemeName(BuildContext context, String theme) {
+    switch (theme) {
+      case defaultTheme:
+        return context.translate.lightThemeName;
+      case secondaryTheme:
+        return context.translate.darkThemeName;
+      default:
+        return context.translate.unknown;
+    }
+  }
+
+  static String get getDefaultTheme {
     final context = rootNavigator.currentContext;
     if (context != null) {
-      bool isDarkMode =
-          MediaQuery.of(context).platformBrightness == Brightness.dark;
-      return isDarkMode ? 'dark' : 'light';
+      final isDarkMode = context.platformBrightness == Brightness.dark;
+      return isDarkMode ? secondaryTheme : defaultTheme;
     } else {
       return ThemeMode.system.name;
     }

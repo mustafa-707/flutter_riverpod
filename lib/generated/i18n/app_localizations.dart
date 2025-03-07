@@ -95,6 +95,30 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
+  /// No description provided for @languageName.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageName;
+
+  /// No description provided for @lightThemeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Light Theme'**
+  String get lightThemeName;
+
+  /// No description provided for @darkThemeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Theme'**
+  String get darkThemeName;
+
+  /// No description provided for @unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknown;
+
   /// No description provided for @now.
   ///
   /// In en, this message translates to:

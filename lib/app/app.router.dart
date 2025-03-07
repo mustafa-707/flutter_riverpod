@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_templete/app/app.transition.dart';
+import 'package:flutter_templete/screens/settings/settings_screen.dart';
 import 'package:flutter_templete/screens/splash_screen.dart';
 
 Route onGenerateRoute(RouteSettings settings) {
@@ -8,15 +10,21 @@ Route onGenerateRoute(RouteSettings settings) {
 
   switch (settings.name) {
     case SplashScreen.routeName:
-      return MaterialPageRoute(
+      return createAppTransition(
         builder: (context) => const SplashScreen(),
         settings: settings,
       );
+
+    case AppSettingsScreen.routeName:
+      return createLtrRtlTransition(
+        builder: (context) => const AppSettingsScreen(),
+        settings: settings,
+      );
     default:
-      return MaterialPageRoute(
+      return createDialogTransition(
         builder: (context) => const Scaffold(
           body: Center(
-            child: Text('Page not found'),
+            child: Text('Screen not found'),
           ),
         ),
         settings: settings,

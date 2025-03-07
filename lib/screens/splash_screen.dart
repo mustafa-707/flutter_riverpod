@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_templete/generated/assets.gen.dart';
 import 'package:flutter_templete/provider/app_settings.dart';
 import 'package:flutter_templete/provider/shared_preferences.dart';
+import 'package:flutter_templete/screens/settings/settings_screen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,10 +24,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     if (!mounted) return;
 
     // if (user != null) {
-    //   Navigator.of(context).pushNamedAndRemoveUntil(
-    //     MainScreen.routeName,
-    //     (_) => false,
-    //   );
+    Navigator.of(context).pushNamedAndRemoveUntil(
+      AppSettingsScreen.routeName,
+      (_) => false,
+    );
     // } else {
     // Navigator.of(context).pushNamedAndRemoveUntil(
     //   'login', //  LoginScreen.routeName,

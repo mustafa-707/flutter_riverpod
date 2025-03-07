@@ -1,5 +1,9 @@
 {
   "@@locale": "en",
+  "languageName": "English",
+  "lightThemeName": "Light Theme",
+  "darkThemeName": "Dark Theme",
+  "unknown": "Unknown",
   "now": "Now",
   "within": "",
   "lessOneMin": "Less than one min",

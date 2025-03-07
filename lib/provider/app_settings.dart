@@ -30,7 +30,7 @@ class AppSettingsController extends StateNotifier<AppSettings> {
 
     return AppSettings(
       locale: locale ?? LocaleService.getDefaultLocale(),
-      theme: theme ?? ThemeService.getDefaultTheme(),
+      theme: theme ?? ThemeService.getDefaultTheme,
     );
   }
 
@@ -44,7 +44,7 @@ class AppSettingsController extends StateNotifier<AppSettings> {
   }
 
   Future<void> updateTheme(String theme) async {
-    if (LocaleService.isSupportedLocale(theme)) {
+    if (ThemeService.isSupportedTheme(theme)) {
       await sharedPreferences.setString(PrefKeys.appTheme, theme);
       state = _settingsFromPrefs(sharedPreferences);
     } else {
@@ -66,5 +66,5 @@ final currentThemeProvider = Provider<String>((ref) {
 
   return isAppReady
       ? ref.watch(appSettingsProvider.select((settings) => settings.theme))
-      : ThemeService.getDefaultTheme();
+      : ThemeService.getDefaultTheme;
 });

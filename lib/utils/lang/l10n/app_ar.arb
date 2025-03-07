@@ -1,5 +1,9 @@
 {
   "@@locale": "ar",
+  "languageName": "العربية",
+  "lightThemeName": "الوضع الفاتح",
+  "darkThemeName": "الوضع الداكن",
+  "unknown": "غير معروف",
   "now": "الآن",
   "within": "منذ",
   "lessOneMin": "أقل من دقيقة",

@@ -23,7 +23,7 @@ class App extends ConsumerWidget {
       themeMode: ThemeMode.values.firstWhere(
         (element) => element.name == theme,
       ),
-      theme: AppTheme.dark,
+      theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: [

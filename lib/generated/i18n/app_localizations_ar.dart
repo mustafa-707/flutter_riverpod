@@ -9,6 +9,18 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get languageName => 'العربية';
+
+  @override
+  String get lightThemeName => 'الوضع الفاتح';
+
+  @override
+  String get darkThemeName => 'الوضع الداكن';
+
+  @override
+  String get unknown => 'غير معروف';
+
+  @override
   String get now => 'الآن';
 
   @override
